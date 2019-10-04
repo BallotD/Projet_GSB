@@ -25,4 +25,15 @@ function loginUser($utilisateur, $mdp) {
 	}
 	return $i;
 }
+function listeEchantillon($statut) {
+	$connect = new connexion();
+	$bdd = $connect->getInstance();
+	$sql = "select numEchantillon, dateVisite, libelleMedicament, nomMedecin, prenomMedecin from echantillon 
+	inner join lot on numLot = numLotEchantillon
+	inner join medecin on idMedecin = idMedecinEchantillon
+	inner join medicament on idMedicament = idMedicamentLot
+	where statut = ".$statut ;
+	$exec=$bdd->query($sql);
+	return $exec;
+}
 ?>
