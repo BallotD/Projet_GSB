@@ -16,6 +16,7 @@ function loginUser($utilisateur, $mdp) {
 			{
 				$trouve = true;
 				$_SESSION['nomUtilisateur']=$ligne['nomUtilisateur'];
+				$_SESSION['idUtilisateur']=$ligne['idUtilisateur'];
 				
 				$i = $ligne['statut'];
 			}
@@ -25,15 +26,16 @@ function loginUser($utilisateur, $mdp) {
 	}
 	return $i;
 }
-function listeEchantillon($statut) {
+function listeEchantillon() {
 	$connect = new connexion();
 	$bdd = $connect->getInstance();
 	$sql = "select numEchantillon, dateVisite, libelleMedicament, nomMedecin, prenomMedecin from echantillon 
 	inner join lot on numLot = numLotEchantillon
 	inner join medecin on idMedecin = idMedecinEchantillon
 	inner join medicament on idMedicament = idMedicamentLot
-	where statut = ".$statut ;
+	inner join utilisateur on idUtilisateur = idUtilisateurEchantillon
+	where idUtilisateurEchantillon = ".$_SESSION["idUtilisateur"] ;
 	$exec=$bdd->query($sql);
 	return $exec;
-}
+} 
 ?>
