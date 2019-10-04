@@ -1,12 +1,16 @@
 <div class="home">
-
-   <div id ="home_title">La liste de tout les echantillons</div>
+<link rel="stylesheet" type="text/css" href="./includes/css/faitmaison.css">
    <table class="table table-striped">
-   	<tr>
+      <Caption>La liste de tous les echantillons</Caption>
+      <thead>
+   	  <tr>
    		<th>Numero du lot</th>
    		<th>Medicament</th>
    		<th>Date</th>
    	</tr>
+   </thead>
+   <tbody>
+
 <?php
 $statut = 0;
 
@@ -21,3 +25,6 @@ foreach($lesechantillons as $unechantillon){
             . '</tr>';
 }
 ?>
+</tbody>
+</table>
+</div>
