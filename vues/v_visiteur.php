@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="./includes/css/faitmaison.css">
 <?php
 
 echo("Consultation des échantillons");

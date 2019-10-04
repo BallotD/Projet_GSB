@@ -29,15 +29,15 @@ function loginUser($utilisateur, $mdp) {
 function listeEchantillon() {
 	$connect = new connexion();
 	$bdd = $connect->getInstance();
-	$sql = "select numLot,numEchantillon, dateVisite, dateSortieStock, libelleMedicament, nomMedecin, prenomMedecin from echantillon 
+	$sql = "select numEchantillon, dateVisite, libelleMedicament, nomMedecin, prenomMedecin from echantillon 
 	inner join lot on numLot = numLotEchantillon
 	inner join medecin on idMedecin = idMedecinEchantillon
 	inner join medicament on idMedicament = idMedicamentLot
 	inner join utilisateur on idUtilisateur = idUtilisateurEchantillon
-	where statut = ".$statut ;
+	where idUtilisateurEchantillon = ".$_SESSION["idUtilisateur"] ;
 	$exec=$bdd->query($sql);
 	return $exec;
-}
+} 
 function echantillon(){
 	$connect = new connexion();
 	$bdd = $connect->getInstance();
