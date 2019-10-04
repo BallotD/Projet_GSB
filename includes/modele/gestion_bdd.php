@@ -12,12 +12,12 @@ function loginUser($utilisateur, $mdp) {
 	{
 		if ($ligne = $exec->fetch())
 		{
-			if ($ligne['nomUtilisateur'] == $utilisateur && $ligne['mdpUtilisateur'] == $mdp)
+			if ($ligne['nomUtilisateur'] == $utilisateur && $ligne['mdpUtilisateur'] == md5($mdp))
 			{
 				$trouve = true;
-				$_SESSION['nomUtilisateur']=$ligne['nomeUtilisateur'];
-				$_SESSION['statut']=$ligne['statut'];
-				$i = $_SESSION['statut'];
+				$_SESSION['nomUtilisateur']=$ligne['nomUtilisateur'];
+				
+				$i = $ligne['statut'];
 			}
 		}
 		else 
