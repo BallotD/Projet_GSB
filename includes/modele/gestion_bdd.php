@@ -16,6 +16,7 @@ function loginUser($utilisateur, $mdp) {
 			{
 				$trouve = true;
 				$_SESSION['nomUtilisateur']=$ligne['nomUtilisateur'];
+				$_SESSION['idUtilisateur']=$ligne['idUtilisateur'];
 				
 				$i = $ligne['statut'];
 			}
@@ -25,7 +26,7 @@ function loginUser($utilisateur, $mdp) {
 	}
 	return $i;
 }
-function listeEchantillon($statut) {
+function listeEchantillon() {
 	$connect = new connexion();
 	$bdd = $connect->getInstance();
 	$sql = "select numLot,numEchantillon, dateVisite, dateSortieStock, libelleMedicament, nomMedecin, prenomMedecin from echantillon 
@@ -50,4 +51,3 @@ function echantillon(){
 	return $exec;
 
 }
-?>

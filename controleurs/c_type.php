@@ -1,6 +1,7 @@
 <?php
 
 $i = loginUser($_REQUEST['login'], $_REQUEST['password']);
+
 if ($i == 2)
 {
 	include "./vues/v_visiteur.php";
