@@ -1,0 +1,43 @@
+html
+{
+	background-color: #BECBC9;
+}
+caption
+{
+	font-size: 200%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+table
+{
+    border-collapse: collapse;
+}
+thead
+{
+	background-color: #FFE4C4;
+}
+tr /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid #F3F7F6;
+    box-shadow: 1px 1px 1px;
+}
+tbody
+{
+	font-style: normal;
+	background-color: 	#F5F5DC;
+}
+body
+{
+	border-radius: 25px;
+}
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+th
+{
+	padding-left: 200px ;
+	padding-right: 200px;
+	border: 1px solid #F3F7F6;
+}
