@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Connexion</title>
    <!--Made with love by Mutiullah Samim -->
    
 	<!--Bootsrap 4 CDN-->
@@ -16,29 +16,30 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./includes/css/style.css">
 </head>
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Connexion</h3>
+				<h3>Galaxy Swiss Bourdin</h3>
 			</div>
 			<div class="card-body">
-				<form>
+				<form method="POST" action="index.php?uc=auth">
+				
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="identifiant">
+						<input type="text" class="form-control" placeholder="nom de l'utilisateur" id="login" type="text" name="login">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text" ><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="mot de passe">
+						<input type="password" class="form-control" placeholder="mot de passe" id="password" type="password" name="password">
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Connexion" class="btn float-right login_btn">
