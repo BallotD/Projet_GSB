@@ -5,6 +5,7 @@
       <thead>
    	  <tr>
    		<th>Numero du lot</th>
+         <th>Nombre d'echantillon</th>
    		<th>Medicament</th>
    		<th>Date</th>
    	</tr>
@@ -19,9 +20,10 @@ foreach($lesechantillons as $unechantillon){
 	echo'<tr>'
 	
 	
-            . '<th>' . $unechantillon['numLot'] . '</th>'
-            . '<th>' . $unechantillon['libelleMedicament'] . '</th>'
-            . '<th>' . $unechantillon['dateSortieStock'] . '</th>'
+            . '<td>' . $unechantillon['numLot'] . '</td>'
+            . '<td>' . $unechantillon['nbr'] . '</td>'
+            . '<td>' . $unechantillon['libelleMedicament'] . '</td>'
+            . '<td>' . $unechantillon['dateLot'] . '</td>'
             . '</tr>';
 }
 ?>

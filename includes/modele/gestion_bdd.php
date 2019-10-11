@@ -41,12 +41,12 @@ function listeEchantillon() {
 function echantillon(){
 	$connect = new connexion();
 	$bdd = $connect->getInstance();
-	$sql = "Select * from echantillon
-	inner join lot on numLot = numLotEchantillon
-	inner join medecin on idMedecin = idMedecinEchantillon
-	inner join medicament on idMedicament = idMedicamentLot
-	inner join utilisateur on idUtilisateur = idUtilisateurEchantillon
-	order by numLot asc";
+	$sql = "Select numLot, count(numLotEchantillon) as nbr, libelleMedicament, dateLot
+            From echantillon
+            Inner join lot on numLot = numLotEchantillon
+            inner join medicament on idMedicament = idMedicamentLot
+            Where numLot = numLotEchantillon 
+            Group by numLot, libelleMedicament, dateLot";
 	$exec=$bdd->query($sql);
 	return $exec;
 
